@@ -1,0 +1,59 @@
+
+.homePageTitle{
+  font-size: 3rem;
+  background-color: var(--red);
+  padding: .5rem;
+  text-align: center;
+}
+
+.homePageTitleImg{
+  height: 3rem;
+  width: 3rem;
+  padding: .5rem;
+  filter: brightness(0) invert(1);
+}
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+article{
+  width: clamp(300px, 80%, 800px)
+}
+header{
+  font-size: 2.1rem;
+}
+
+article, header, .title{
+    margin-bottom: 1.8rem;
+}
+section{
+  font-size: 1.2rem;
+}
+
+.users{
+  display: flex;
+  justify-content: space-around;
+}
+
+.user{
+  border-radius: 1rem;
+  background-color: var(--red);
+  border: var(--red) 1px solid;
+  padding: 15px;
+  transition: 300ms;
+}
+
+.sign-in{
+  background-color: var(--grey);
+  border: var(--grey) 1px solid;
+}
+
+.user:hover{
+  background-color: var(--black);
+}
+
+.sign-in:hover, .sign-up:hover{
+  text-decoration: underline;
+}
