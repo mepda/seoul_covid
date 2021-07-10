@@ -4,8 +4,6 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-
-
 export default function StackedBar() {
   const options = {
     plugins: {
@@ -38,12 +36,14 @@ export default function StackedBar() {
     labels: [],
     datasets: [
       {
+        data: [5, 50, 125, 250, 500],
         label: 'Seoul Cases',
-        backgroundColor: '#590995',
+        backgroundColor: '#444444',
       },
       {
+        data: [10, 100, 250, 500, 1500],
         label: 'National Cases',
-        backgroundColor: '#C62A88',
+        backgroundColor: '#DA0037',
       },
     ],
   });
@@ -54,7 +54,6 @@ export default function StackedBar() {
       let seoul_cases = [];
       let national_cases = [];
       let date_times = [];
-      let last_seven_days = [];
       //get data into a more useable format, have epoch time be key and an object with data inside it
       past_week_data.forEach((element, i) => {
         date_times.push(past_week_data[i].date.S)
@@ -62,7 +61,6 @@ export default function StackedBar() {
           koreaDaily: past_week_data[i].koreaDaily.S,
           seoulDaily: past_week_data[i].seoulDaily.S,
         }
-        // console.log(past_week_data)
       });
       date_times = date_times.sort((a, b) => {
         return new Date(a) - new Date(b)
@@ -78,12 +76,10 @@ export default function StackedBar() {
           {
             label: 'Seoul Cases',
             data: [],
-
           },
           {
             label: 'National Cases',
             data: [],
-
           },
         ]
       }
