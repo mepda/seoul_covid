@@ -51,9 +51,13 @@ section{
 }
 
 .user:hover{
+  text-decoration: underline;
   background-color: var(--black);
 }
 
-.sign-in:hover, .sign-up:hover{
-  text-decoration: underline;
+/* Remove the anchor link defaults for react router*/
+a:visited, a {
+  color:var(--white);
+  text-decoration: none;
 }
+

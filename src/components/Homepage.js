@@ -1,12 +1,16 @@
-import React from 'react'
+import React from 'react';
 import './Homepage.css'
 import DailyChart from './DailyChart';
-import microbe from './microbe.png'
+import {
+  Link
+} from "react-router-dom";
+
+
 
 export default function Homepage() {
+
   return (
     <div>
-      <h1 className="homePageTitle">Seoul Covid API <img className="homePageTitleImg" src={microbe}></img></h1>
       <main>
         <article>
           <header>
@@ -22,12 +26,12 @@ export default function Homepage() {
         <article>
           <header>Looking for Programmatic Access? Join below</header>
           <section className="users">
-            <button className="user sign-up">
+            <Link to="/signup" className="user sign-up">
               Sign Up
-            </button>
-            <button className="user sign-in">
+            </Link>
+            <Link to="/signup" className="user sign-in">
               Sign In
-            </button>
+            </Link>
           </section>
         </article>
       </main>
