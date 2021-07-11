@@ -50,15 +50,20 @@ export default function StackedBar() {
   useEffect(() => {
     axios.get('https://ig78fyk8y3.execute-api.us-east-1.amazonaws.com/dev/week').then(data => {
       let past_week_data = JSON.parse(data.data.body)
+      past_week_data = past_week_data.Items;
+      console.log(past_week_data)
       let extracted_data = {};
       let seoul_cases = [];
       let national_cases = [];
       // date_times are iso 8601, past_seven_days are past 7 days from today
       // multi_date is the combination of these two
       let date_times = [];
-      let days_of_week = ['mon', 'tues', 'wed', 'thur', 'fri', 'sat', 'sun'];
+
+      //Fun fact: if new Date().getDay() is a sunday it's actually 0 
+      let days_of_week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
       let past_seven_days = [];
       let multi_date = [];
+      console.log(past_week_data)
       //get data into a more useable format, have epoch time be key and an object with data inside it
       past_week_data.forEach((element, i) => {
         date_times.push(past_week_data[i].date.S)
