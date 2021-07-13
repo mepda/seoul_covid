@@ -56,7 +56,7 @@ export default function API() {
         <section>
           Returns JSON with the URL specified ISO 8601 dates. Example:
           <textarea className="apiExample" ref={api_url} onClick={copy}>https://ig78fyk8y3.execute-api.us-east-1.amazonaws.com/dev/api?start_date=2021-07-07&end_date=2021-07-10</textarea>
-          Gives a response of JSON with Items from 2021-07-07 to 2021-07-10
+          Gives a response of JSON with Items from 2021-07-07 to 2021-07-10 in an unordered array of objects
           <h4 className="parameters">Parameters</h4>
           <code className="paramExamples">
             <div><span className="underline">start_date</span> :: Must be in ISO 8601 format (YYYY-MM-DD)</div>

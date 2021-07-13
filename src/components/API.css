@@ -36,3 +36,7 @@ textarea{
   margin: 2rem 0;
   border-bottom: 1px solid white;
 }
+
+.results{
+  word-break: break-all;
+}

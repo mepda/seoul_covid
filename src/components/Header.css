@@ -9,9 +9,10 @@
   user-select: none;
 }
 .homePageTitleImg{
-  height: 3rem;
-  width: 3rem;
-  padding: .5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+    /* padding: .5rem; */
+    margin-left: 1rem;
   filter: brightness(0) invert(1);
 }
 
