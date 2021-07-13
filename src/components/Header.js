@@ -2,9 +2,7 @@ import React from 'react'
 import microbe from './microbe.png';
 import './Header.css';
 import {
-  Link,
-  Switch,
-  Route,
+  Link
 } from "react-router-dom";
 export default function Header() {
   return (

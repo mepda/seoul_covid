@@ -21,14 +21,14 @@ export default function Homepage() {
 
 
         <article>
-          <header>Looking for Programmatic Access? Join below</header>
+          <header>Looking for Programmatic Access? Check below</header>
           <section className="users">
-            <Link to="/signup" className="user sign-up">
-              Sign Up
+            <Link to="/API" className="user sign-up">
+              API Docs
             </Link>
-            <Link to="/signup" className="user sign-in">
-              Sign In
-            </Link>
+            <a className="user sign-in" href="https://github.com/mepda/seoul_covid" target="_blank">
+              Github
+            </a>
           </section>
         </article>
       </main>

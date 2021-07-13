@@ -4,8 +4,7 @@ import Header from './components/Header';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import SignUp from './components/SignUp';
 import API from './components/API';
@@ -28,6 +27,11 @@ function App() {
           <Route exact path='/about'>
             <About />
           </Route>
+          <Route path='/github' component={() => {
+            window.location.href = 'https://github.com/mepda/seoul_covid';
+            return null;
+          }} />
+
         </Switch>
       </div>
     </Router>

@@ -15,7 +15,7 @@ export default function API() {
           Seoul / Korea Open API
         </header>
         <section>
-          <span classbName="green">GET</span> Get a range of Dates
+          <span className="green">GET</span> Get a range of Dates
         </section>
         <section >
           <p>Returns JSON with the URL specified ISO 8601 dates. Example:</p>
