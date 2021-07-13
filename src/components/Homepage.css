@@ -1,17 +1,4 @@
 
-.homePageTitle{
-  font-size: 3rem;
-  background-color: var(--red);
-  padding: .5rem;
-  text-align: center;
-}
-
-.homePageTitleImg{
-  height: 3rem;
-  width: 3rem;
-  padding: .5rem;
-  filter: brightness(0) invert(1);
-}
 main{
   display: flex;
   justify-content: center;

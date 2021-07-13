@@ -17,9 +17,9 @@ export default function Homepage() {
             From April 8th, 2021 this app has been running collecting data from government and public sites and saving that data so that it can be used by anyone who wants to refer to historical data for Covid in Seoul and Korea.
           </section>
         </article>
-        <article>
-          <DailyChart />
-        </article>
+
+        <DailyChart className="DailyChart" />
+
         <article>
           <header>Looking for Programmatic Access? Join below</header>
           <section className="users">

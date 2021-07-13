@@ -1,0 +1,11 @@
+.ChartJSContainer{
+  box-sizing: border-box;
+  width: 60%;
+}
+
+@media(max-width: 800px){
+  .ChartJSContainer{
+    box-sizing: border-box;
+    width: 95%;
+  }
+}

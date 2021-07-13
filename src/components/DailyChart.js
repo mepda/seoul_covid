@@ -2,7 +2,7 @@ import React from 'react';
 import { Bar } from 'react-chartjs-2';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import './DailyChart.css';
 
 export default function StackedBar() {
   const options = {
@@ -16,6 +16,7 @@ export default function StackedBar() {
         }
       }
     },
+    responsive: true,
     scales: {
       yAxes: [
         {
@@ -48,9 +49,11 @@ export default function StackedBar() {
     ],
   });
   useEffect(() => {
-    axios.get('https://ig78fyk8y3.execute-api.us-east-1.amazonaws.com/dev/week').then(data => {
-      let past_week_data = JSON.parse(data.data.body)
-      past_week_data = past_week_data.Items;
+    axios.get('https://ig78fyk8y3.execute-api.us-east-1.amazonaws.com/dev/api').then(data => {
+      // console.log(data.data)
+      // let past_week_data = ''// JSON.parse(data.data)
+
+      let past_week_data = data.data.Items;
       console.log(past_week_data)
       let extracted_data = {};
       let seoul_cases = [];
@@ -113,11 +116,11 @@ export default function StackedBar() {
 
 
   return (
-    <>
+    <div className="ChartJSContainer">
       <div>
         <h1 className='title'>Weekly Chart Statistics</h1>
       </div>
       <Bar data={data} options={options} />
-    </>
+    </div>
   )
 }
