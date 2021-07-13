@@ -49,6 +49,13 @@ export default function StackedBar() {
     ],
   });
   useEffect(() => {
+    console.log(`
+██╗░░██╗██╗  ████████╗██╗░░██╗███████╗██████╗░███████╗
+██║░░██║██║  ╚══██╔══╝██║░░██║██╔════╝██╔══██╗██╔════╝
+███████║██║  ░░░██║░░░███████║█████╗░░██████╔╝█████╗░░
+██╔══██║██║  ░░░██║░░░██╔══██║██╔══╝░░██╔══██╗██╔══╝░░
+██║░░██║██║  ░░░██║░░░██║░░██║███████╗██║░░██║███████╗
+╚═╝░░╚═╝╚═╝  ░░░╚═╝░░░╚═╝░░╚═╝╚══════╝╚═╝░░╚═╝╚══════╝`)
     axios.get('https://ig78fyk8y3.execute-api.us-east-1.amazonaws.com/dev/api').then(data => {
       let past_week_data = data.data;
       let extracted_data = {};
@@ -62,6 +69,7 @@ export default function StackedBar() {
       let days_of_week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
       let past_seven_days = [];
       let multi_date = [];
+      console.table(past_week_data)
       //get data into a more useable format, have epoch time be key and an object with data inside it
       past_week_data.forEach((element, i) => {
         date_times.push(past_week_data[i].date)
@@ -71,7 +79,6 @@ export default function StackedBar() {
           seoulDaily: past_week_data[i].seoulDaily,
         }
       });
-      console.log(extracted_data)
 
       date_times = date_times.sort((a, b) => {
         //sort the dates in ascending order
@@ -83,12 +90,10 @@ export default function StackedBar() {
         let multi_temp = `${day} (${days_of_week[temp]})`;
         multi_date.push(multi_temp)
       })
-      console.log(date_times)
       date_times.forEach(day => {
         //with newly sorted dates, push the weekly update data to two arrays
         //these will be sorted by default because the array of date_times
         //is sorted
-        console.log(seoul_cases)
         seoul_cases.push(extracted_data[day].seoulDaily)
         national_cases.push(extracted_data[day].koreaDaily)
       })
