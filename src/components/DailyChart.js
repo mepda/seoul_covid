@@ -69,7 +69,8 @@ export default function StackedBar() {
       let days_of_week = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
       let past_seven_days = [];
       let multi_date = [];
-      console.table(past_week_data)
+      console.table(past_week_data);
+      console.log("Tip! Cast the dates relative to epoch time to sort them 😎")
       //get data into a more useable format, have epoch time be key and an object with data inside it
       past_week_data.forEach((element, i) => {
         date_times.push(past_week_data[i].date)
