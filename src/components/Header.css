@@ -4,7 +4,10 @@
   padding: .5rem;
   text-align: center;
 }
-
+.homePageTitle:hover{
+  cursor: default;
+  user-select: none ;
+}
 .homePageTitleImg{
   height: 3rem;
   width: 3rem;

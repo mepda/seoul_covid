@@ -9,6 +9,7 @@ export default function Homepage() {
   return (
     <div>
       <main>
+        <DailyChart className="DailyChart" />
         <article>
           <header>
             Open API tracking Corona in Seoul & Korea.
@@ -18,7 +19,6 @@ export default function Homepage() {
           </section>
         </article>
 
-        <DailyChart className="DailyChart" />
 
         <article>
           <header>Looking for Programmatic Access? Join below</header>
