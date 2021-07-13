@@ -3,6 +3,9 @@
 .green{
   color: Green;
 }
+.underline{
+  text-decoration: underline;
+}
 .apiExample{
   background: white;
   color: black;
@@ -18,4 +21,18 @@ textarea{
   -moz-box-shadow: none;
   box-shadow: none;
   resize: none; 
+}
+
+.parameters{
+  margin-bottom: 0;
+}
+
+.paramExamples{
+  display: flex;
+  flex-direction: column;
+}
+
+.break{
+  margin: 2rem 0;
+  border-bottom: 1px solid white;
 }

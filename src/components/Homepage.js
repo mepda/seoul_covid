@@ -26,7 +26,7 @@ export default function Homepage() {
             <Link to="/API" className="user sign-up">
               API Docs
             </Link>
-            <a className="user sign-in" href="https://github.com/mepda/seoul_covid" target="_blank">
+            <a className="user sign-in" rel="noreferrer" href="https://github.com/mepda/seoul_covid" target="_blank">
               Github
             </a>
           </section>
