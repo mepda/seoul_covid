@@ -5,8 +5,13 @@ export default function API() {
   const api_url = useRef();
   const [seven_days_data, load_seven_days_data] = useState()
   const [custom_range_data, load_custom_range_data] = useState()
-  function copy() {
-    document.getElementsByClassName('apiExample')[0].select()
+  function copy(url) {
+    if (url === 'week') {
+      document.getElementsByClassName('apiExample1')[0].select()
+    }
+    else if (url === 'custom') {
+      document.getElementsByClassName('apiExample2')[0].select()
+    }
     document.execCommand('copy');
   }
   function testAPI(arg) {
@@ -36,7 +41,7 @@ export default function API() {
         </section>
         <section >
           Returns JSON array of Corona virus cases for the past 7 days. Example:
-          <textarea readOnly className="apiExample" ref={api_url} onClick={() => copy()} value="https://ig78fyk8y3.execute-api.us-east-1.amazonaws.com/dev/api"></textarea>
+          <textarea readOnly className="apiExample apiExample1" ref={api_url} onClick={() => copy('week')} value="https://ig78fyk8y3.execute-api.us-east-1.amazonaws.com/dev/api"></textarea>
           Gives a response of JSON with Items from 2021-07-07 to 2021-07-10
           <h4 className="parameters">Parameters</h4>
           <code className="paramExamples">
@@ -55,7 +60,7 @@ export default function API() {
         </section>
         <section>
           Returns JSON with the URL specified ISO 8601 dates. Example:
-          <textarea readOnly className="apiExample" ref={api_url} onClick={() => copy('custom')} value="https://ig78fyk8y3.execute-api.us-east-1.amazonaws.com/dev/api?start_date=2021-07-07&end_date=2021-07-10"></textarea>
+          <textarea readOnly className="apiExample apiExample2" ref={api_url} onClick={() => copy('custom')} value="https://ig78fyk8y3.execute-api.us-east-1.amazonaws.com/dev/api?start_date=2021-07-07&end_date=2021-07-10"></textarea>
           Gives a response of JSON with Items from 2021-07-07 to 2021-07-10 in an unordered array of objects
           <h4 className="parameters">Parameters</h4>
           <code className="paramExamples">

@@ -27,11 +27,6 @@ function App() {
           <Route exact path='/about'>
             <About />
           </Route>
-          <Route path='/github' component={() => {
-            window.location.href = 'https://github.com/mepda/seoul_covid';
-            return null;
-          }} />
-
         </Switch>
       </div>
     </Router>

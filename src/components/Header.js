@@ -21,7 +21,6 @@ export default function Header() {
         </ul>
       </nav>
       <h1 className="homePageTitle"><span className="homePageTitleText">Seoul Covid API</span><img alt="An emoticon of a virus" className="homePageTitleImg" src={microbe}></img></h1>
-
     </div>
   )
 }
