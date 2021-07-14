@@ -1,4 +1,16 @@
-.aLink{
-  text-decoration: underline;
+.exampleTextMessage{
+  margin: 2rem 0;
+}
+a{
   font-size: 1.2rem;
+  text-decoration: underline;
+}
+a:hover{
+  text-decoration: underline;
+  text-decoration-color: var(--red);
+}
+.explanation{
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap row;
 }
