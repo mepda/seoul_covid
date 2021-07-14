@@ -2,7 +2,7 @@ import './App.css';
 import Homepage from './components/Homepage';
 import Header from './components/Header';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
@@ -12,6 +12,7 @@ import About from './components/About'
 function App() {
   return (
     <Router>
+
       <div className="App">
         <Header />
         <Switch>

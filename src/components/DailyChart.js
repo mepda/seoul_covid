@@ -4,7 +4,10 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './DailyChart.css';
 
+
 export default function StackedBar() {
+
+
   const options = {
     plugins: {
       legend: {
@@ -75,6 +78,7 @@ export default function StackedBar() {
       past_week_data.forEach((element, i) => {
         date_times.push(past_week_data[i].date)
         //use the ISO 8601 date as a key in the new object
+        console.log(past_week_data[i].date)
         extracted_data[past_week_data[i].date] = {
           koreaDaily: past_week_data[i].koreaDaily,
           seoulDaily: past_week_data[i].seoulDaily,
@@ -83,7 +87,7 @@ export default function StackedBar() {
 
       date_times = date_times.sort((a, b) => {
         //sort the dates in ascending order
-        return new Date(a) - new Date(b)
+        return (new Date(a)) - (new Date(b))
       });
       date_times.forEach(day => {
         let temp = new Date(day).getDay();
@@ -100,7 +104,7 @@ export default function StackedBar() {
       })
 
       let new_data = {
-        labels: past_seven_days,
+        labels: date_times,
         datasets: [
           {
             label: 'Seoul Cases',
@@ -114,7 +118,8 @@ export default function StackedBar() {
       }
       new_data.datasets[0].data = seoul_cases;
       new_data.datasets[1].data = national_cases;
-      loadData(new_data)
+      console.log(seoul_cases, national_cases)
+      loadData(new_data);
     })
   }, [])
 

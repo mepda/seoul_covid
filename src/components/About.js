@@ -10,7 +10,7 @@ export default function About() {
             How & Why I built this Project 👨🏻‍💻
           </header>
           <section className="explanation">
-            <div className="firstPara">
+            <div>
               This project was built using serverless AWS technologies. It's set up to record the data published on a <a target="_blank" rel="noreferrer" href="http://ncov.mohw.go.kr/en/bdBoardList.do?brdId=16&brdGubun=162&dataGubun=&ncvContSeq=&contSeq=&board_id=">Korean government website</a>and keeping a tab of Corona Virus daily numbers in Seoul and Korea. Every day a CloudWatch set with a cron time expression triggers a lambda function at 10am KST. The lambda function then extracts the data I'm looking for from the Korean governmental website, pushes the data into a DynamoDB table, and sends it to an SNS topic. SNS then fires off which is set up to send a SMS to my cellphone with the most recent data allowing me to keep an eye easily on recent changes in Korea and Seoul.
             </div>
             <br />
