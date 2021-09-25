@@ -3,9 +3,15 @@ import axios from 'axios';
 import './API.css';
 export default function API() {
   const api_url = useRef();
-  const [seven_days_data, load_seven_days_data] = useState()
-  const [custom_range_data, load_custom_range_data] = useState()
-  const [csv_data, load_csv_data] = useState()
+  const [sevenDaysData, setSevenDaysData] = useState()
+  const [customRangeData, setCustomRangeData] = useState()
+  const [csvData, setCsvData] = useState()
+
+  const setStateMethods = {
+    week: setSevenDaysData,
+    custom: setCustomRangeData,
+    csv: setCsvData
+  }
 
   let epoch_time_now = new Date().getTime();
   let day = 1000 * 60 * 60 * 24;
@@ -14,6 +20,7 @@ export default function API() {
   let seven_days_ago_obj = new Date(sevenDaysAgo);
   let ISO_8601_date = `${today_date_obj.getFullYear()}-${today_date_obj.getMonth() + 1}-${today_date_obj.getUTCDate()}`
   let ISO_8601_seven_days_ago_date = `${seven_days_ago_obj.getFullYear()}-${seven_days_ago_obj.getMonth() + 1}-${seven_days_ago_obj.getUTCDate()}`
+
   function copy(url) {
     if (url === 'week') {
       document.getElementsByClassName('apiExample1')[0].select()
@@ -25,21 +32,22 @@ export default function API() {
   }
   function testAPI(arg) {
     if (arg === 'week') {
-      load_seven_days_data('testing...')
+      setSevenDaysData('testing...')
+
       axios.get('https://ig78fyk8y3.execute-api.us-east-1.amazonaws.com/dev/api').then(data => {
-        load_seven_days_data(data.data)
+        setSevenDaysData(data.data)
       })
     }
     else if (arg === 'custom') {
-      load_custom_range_data('testing...')
+      setCustomRangeData('testing...')
       axios.get('https://ig78fyk8y3.execute-api.us-east-1.amazonaws.com/dev/api?start_date=2021-07-07&end_date=2021-07-15').then(data => {
-        load_custom_range_data(data.data)
+        setCustomRangeData(data.data)
       })
     }
     else if (arg === 'csv') {
-      load_csv_data('testing...')
+      setCsvData('testing...')
       axios.get('https://ig78fyk8y3.execute-api.us-east-1.amazonaws.com/dev/api?start_date=2021-07-07&end_date=2021-07-15&encoding=csv').then(data => {
-        load_csv_data(data.data)
+        setCsvData(data.data)
       })
     }
 
@@ -65,7 +73,7 @@ export default function API() {
           <div className="testAPI">
             <button onClick={() => testAPI('week')}>Test</button>
             <div className="results">
-              {JSON.stringify(seven_days_data)}
+              {JSON.stringify(sevenDaysData)}
             </div>
           </div>
         </section>
@@ -87,13 +95,13 @@ export default function API() {
           <div className="testAPI">
             <button onClick={() => testAPI('custom')}>Test</button>
             <div className="results">
-              {JSON.stringify(custom_range_data)}
+              {JSON.stringify(customRangeData)}
             </div>
           </div>
           <div className="testAPI">
             <button onClick={() => testAPI('csv')}>Test CSV</button>
             <div className="results">
-              {JSON.stringify(csv_data)}
+              {JSON.stringify(csvData)}
             </div>
           </div>
         </section>
